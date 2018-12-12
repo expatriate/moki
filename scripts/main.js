@@ -7,7 +7,9 @@ var width = movementStrength / w;
 document.addEventListener("DOMContentLoaded", ready);
 
 function ready() {
-  document.addEventListener('mousemove', mouseMove);
+  if (w > 720) {
+    document.addEventListener('mousemove', mouseMove);
+  }
 
   new Snow('#snow',{
       number:200,

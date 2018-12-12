@@ -70,6 +70,13 @@ html, body {
   width: 110%;
   background-size: cover;
 }
+
+@media screen and (max-width: 720px) {
+  #background {
+    background:url('../assets/img/backgroundsmall.jpg');
+    background-size: contain;
+  }
+}
 #snow {
   background:url('../assets/img/snow_up.png') -50px -50px;
   position:absolute;
@@ -78,6 +85,12 @@ html, body {
   height: 105%;
   width: 105%;
   background-size: cover;
+}
+
+@media screen and (max-width: 720px) {
+  #snow {
+    background:none;
+  }
 }
 
 #background2 {
@@ -107,6 +120,19 @@ html, body {
   background-repeat: no-repeat;
   background-position: bottom left;
 }
+
+@media screen and (max-width: 720px) {
+  .left-1 {
+    background:url('../assets/img/shamsmall.png');
+    z-index: 1;
+    background-size: cover;
+    width: 43%;
+    height: 54%;
+    left: 0;
+    bottom: 30%;
+  }
+}
+
 .left-2 {
   width: 40%;
   height: 61%;
@@ -132,6 +158,30 @@ html, body {
   background-position: bottom left;
   z-index: 2;
 }
+.left-4 {
+  width: 30%;
+  height: 26%;
+  position: absolute;
+  left: 38%;
+  bottom: 40%;
+  z-index: 3;
+  background:url('../assets/img/ping.png');
+  background-size: contain;
+  background-repeat: no-repeat;
+  background-position: bottom left;
+}
+.left-5 {
+  width: 39%;
+  height: 35%;
+  position: absolute;
+  left: 0;
+  bottom: 34%;
+  z-index: 4;
+  background:url('../assets/img/girlsmall.png');
+  background-size: contain;
+  background-repeat: no-repeat;
+  background-position: bottom left;
+}
 
 .right-1 {
   width: 28%;
@@ -144,6 +194,17 @@ html, body {
   background-repeat: no-repeat;
   background-position: bottom right;
 }
+@media screen and (max-width: 720px) {
+  .right-1 {
+    width: 36%;
+    height: 43%;
+    position: absolute;
+    right: -4%;
+    bottom: 43%;
+    z-index: 1;
+  }
+}
+
 .right-2 {
   width: 40%;
   height: 73%;
@@ -164,6 +225,31 @@ html, body {
   bottom: 0;
   z-index: 2;
   background:url('../assets/img/snowright.png');
+  background-size: contain;
+  background-repeat: no-repeat;
+  background-position: bottom right;
+}
+.right-4 {
+  width: 39%;
+  height: 17%;
+  position: absolute;
+  right: -12px;
+  bottom: 38%;
+  transform: rotate(8deg);
+  z-index: 3;
+  background:url('../assets/img/dog.png');
+  background-size: contain;
+  background-repeat: no-repeat;
+  background-position: bottom right;
+}
+.right-5 {
+  width: 54%;
+  height: 39%;
+  position: absolute;
+  right:0;
+  bottom: 41%;
+  z-index: 1;
+  background:url('../assets/img/mansmall.png');
   background-size: contain;
   background-repeat: no-repeat;
   background-position: bottom right;
@@ -192,6 +278,21 @@ html, body {
   background-position: center center;
   z-index: 3;
 }
+
+@media screen and (max-width: 720px) {
+  .center-2 {
+    width: 96%;
+    height: 26%;
+    position: absolute;
+    right: 3%;
+    bottom: 30%;
+    z-index: 5;
+    background:url('../assets/img/logosmall.png');
+    background-size: contain;
+    background-repeat: no-repeat;
+    background-position: bottom center;
+  }
+}
 .center-top {
   width: 40%;
   position: absolute;
@@ -202,9 +303,22 @@ html, body {
   flex-direction: column;
   align-items: center;
 }
+@media screen and (max-width: 720px) {
+  .center-top {
+    width: 58%;
+    right: 21%;
+    margin-top: 5%;
+  }
+}
 .center-top__logo {
   margin-top: 24px;
   margin-bottom: 4px;
+}
+.center-top__logo-small {
+  position: absolute;
+  left: 20px;
+  top: 20px;
+  width: 12%;
 }
 .center-bottom {
   width: 40%;
@@ -216,6 +330,25 @@ html, body {
   flex-direction: column;
   align-items: center;
 }
+@media screen and (max-width: 720px) {
+  .center-bottom {
+    bottom: 0%;
+    width: 100%;
+    right: 0;
+  }
+}
+
+.center-bottom-small {
+  width: 100%;
+  height: 44%;
+  bottom: 0;
+  z-index: 4;
+  position: absolute;
+  background:url('../assets/img/bottomsmall.png');
+  background-size: cover;
+  background-repeat: no-repeat;
+  background-position: center bottom;
+}
 
 .social {
   display: flex;
@@ -225,9 +358,14 @@ html, body {
 }
 .social__item {
   width: 50px;
-  height: 50px;
+  height: 54px;
   margin: 4px;
-  background-color: #aa1122;
+}
+.social__item img {
+  width: 100%;
+  height: 100%;
+}
+.social__item img:hover {
 }
 
 .trailer-btn {
@@ -239,6 +377,14 @@ html, body {
   font-size:20px;
   text-transform: uppercase;
 }
+@media screen and (max-width: 720px) {
+  .big-text {
+    margin: 12px 0px 0px 0px;
+    font-size:16px;
+    text-align: center;
+    text-transform: uppercase;
+  }
+}
 .extra-big-text {
   margin: 12px 0px;
   font-size:36px;
@@ -249,10 +395,28 @@ html, body {
   font-size: 14px;
   text-transform: uppercase;
 }
+
+@media screen and (max-width: 720px) {
+  .middle-text {
+    width: 57%;
+    color: #132445!important;
+    font-size: 16px;
+    text-align: center;
+  }
+}
+    
 .small-text {
   margin: 6px 0px;
   font-size: 12px;
   text-transform: uppercase;
+}
+@media screen and (max-width: 720px) {
+  .small-text {
+    margin: 14px 0px;
+    font-size:10px;
+    text-align: center;
+    text-transform: uppercase;
+  }
 }
 
 .white {
@@ -265,7 +429,25 @@ html, body {
   color: #eaff00;
 }
 
+@media screen and (max-width: 720px) {
+  .blue {
+    color: #132445;
+  }
+}
 
+@media screen and (max-width: 720px) {
+  .mobile-visible {
+    display: block;
+  }
+  .mobile-hidden {
+    display: none;
+  }
+}
+@media screen and (min-width: 720px) {
+  .mobile-visible {
+    display: none;
+  }
+}
 
 
 
