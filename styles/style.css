@@ -345,7 +345,7 @@ html, body {
   z-index: 4;
   position: absolute;
   background:url('../assets/img/bottomsmall.png');
-  background-size: cover;
+  background-size: contain;
   background-repeat: no-repeat;
   background-position: center bottom;
 }
