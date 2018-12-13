@@ -1,7 +1,3 @@
-"use strict";
-
-var _typeof = typeof Symbol === "function" && typeof Symbol.iterator === "symbol" ? function (obj) { return typeof obj; } : function (obj) { return obj && typeof Symbol === "function" && obj.constructor === Symbol && obj !== Symbol.prototype ? "symbol" : typeof obj; };
-
 /*!
 * Snow.js v1.0.0
 * https://github.com/zmfe/snow.js
@@ -11,68 +7,256 @@ var _typeof = typeof Symbol === "function" && typeof Symbol.iterator === "symbol
 *
 * Date: 2018-01-16T11:55:01.675Z
 */
-!function (t, i) {
-  "object" == (typeof exports === "undefined" ? "undefined" : _typeof(exports)) && "undefined" != typeof module ? module.exports = i() : "function" == typeof define && define.amd ? define(i) : t.Snow = i();
-}(undefined, function () {
-  "use strict";
-  var t = window.document,
-      i = {},
-      e = { index: 0, x: 0, y: 0, context: "", color: "rgb(255, 255, 255)", r: 1 };function n(t) {
-    return Math.PI * (t / 180);
-  }var h = function h(t, i) {
-    if (!(t instanceof i)) throw new TypeError("Cannot call a class as a function");
-  },
-      o = function () {
-    function t(t, i) {
-      for (var e = 0; e < i.length; e++) {
-        var n = i[e];n.enumerable = n.enumerable || !1, n.configurable = !0, "value" in n && (n.writable = !0), Object.defineProperty(t, n.key, n);
+
+if (!Object.assign) {
+  Object.defineProperty(Object, 'assign', {
+    enumerable: false,
+    configurable: true,
+    writable: true,
+    value: function(target, firstSource) {
+      'use strict';
+      if (target === undefined || target === null) {
+        throw new TypeError('Cannot convert first argument to object');
       }
-    }return function (i, e, n) {
-      return e && t(i.prototype, e), n && t(i, n), i;
-    };
-  }(),
-      a = function () {
-    function t() {
-      var i = arguments.length > 0 && void 0 !== arguments[0] ? arguments[0] : {};h(this, t), this.option = Object.assign({}, e, i);var n = this.option,
-          o = n.content,
-          a = n.color,
-          r = n.x,
-          s = n.y,
-          c = n.r,
-          l = n.v;this.color = a.replace("rgb", "rgba").split(")")[0] + "," + (Math.floor(50 * Math.random()) + 50) / 100 + ")", this.content = o, this.r = c * (.4 * Math.random() + .6), this.x = r, this.y = s, this.v = l, this.angle = Math.PI * Math.random();
-    }return o(t, [{ key: "draw", value: function value() {
-        var t = this.content,
-            i = this.color,
-            e = this.x,
-            n = this.y,
-            h = this.r;t.beginPath(), t.arc(Math.floor(e), Math.floor(n), h, 0, 2 * Math.PI, !0), t.closePath(), t.fillStyle = i, t.fill();
-      } }, { key: "move", value: function value() {
-        var t,
-            i,
-            e = this.option,
-            h = e.width,
-            o = e.height;this.x += this.v * Math.cos(((t = this.angle) > n(15) && t <= n(90) ? t -= Math.PI / 6 : t > n(90) && t <= n(165) && (t += Math.PI / 6), t)) * .3, this.y += this.v * Math.sin(((i = this.angle) > n(165) ? i -= Math.PI / 4 : i < n(15) && (i += Math.PI / 4), i)), (this.y > o || this.x > h || this.x < 0) && (this.y = 0, this.x = Math.random() * h, this.angle = Math.PI * Math.random());
-      } }]), t;
-  }();return function () {
-    function e(n) {
-      var o = arguments.length > 1 && void 0 !== arguments[1] ? arguments[1] : {};h(this, e), this.element = t.querySelector(n), this.canvas = "", this.ctx = "", this.width = 0, this.height = 0, this.option = Object.assign({}, i, o), this.number = this.option.number, this.partiles = [], this.init();
-    }return o(e, [{ key: "init", value: function value() {
-        var t = this.element,
-            i = t.clientWidth,
-            e = t.clientHeight;this.width = i, this.height = e, this.createCanvas(), this.createParticle();
-      } }, { key: "createCanvas", value: function value() {
-        var i = this.element,
-            e = this.width,
-            n = this.height,
-            h = t.createElement("canvas");h.width = e, h.height = n, h.style.cssText = "position:absolute;top:0;left:0;background:rgba(0,0,0,0);pointer-events:none;z-index:1;", i.appendChild(h), this.canvas = h, this.ctx = h.getContext("2d");
-      } }, { key: "createParticle", value: function value() {
-        for (var t = this.option, i = t.r, e = t.v, n = this.ctx, h = this.width, o = this.height, r = this.number, s = this.partiles, c = 0; c < r; c += 1) {
-          var l = new a({ color: "rgb(255,255,255)", content: n, y: Math.floor(Math.random() * o), x: Math.floor(Math.random() * h), r: i, v: e, width: this.width, height: this.height });s.push(l), l.draw();
-        }!function t() {
-          n.clearRect(0, 0, h, o), s.forEach(function (t) {
-            t.move(), t.draw();
-          }), requestAnimationFrame(t);
-        }();
-      } }]), e;
-  }();
-});
+
+      var to = Object(target);
+      for (var i = 1; i < arguments.length; i++) {
+        var nextSource = arguments[i];
+        if (nextSource === undefined || nextSource === null) {
+          continue;
+        }
+
+        var keysArray = Object.keys(Object(nextSource));
+        for (var nextIndex = 0, len = keysArray.length; nextIndex < len; nextIndex++) {
+          var nextKey = keysArray[nextIndex];
+          var desc = Object.getOwnPropertyDescriptor(nextSource, nextKey);
+          if (desc !== undefined && desc.enumerable) {
+            to[nextKey] = nextSource[nextKey];
+          }
+        }
+      }
+      return to;
+    }
+  });
+}
+
+(function (global, factory) {
+  typeof exports === 'object' && typeof module !== 'undefined' ? module.exports = factory() :
+  typeof define === 'function' && define.amd ? define(factory) :
+  (global.Snow = factory());
+}(this, (function () { 'use strict';
+
+var _window = window;
+var document = _window.document;
+var DEFAULT_OPTIONS = {};
+var DEFAULT_SNOWPARTICLE_OPTIONS = {
+  index: 0,
+  x: 0,
+  y: 0,
+  context: '',
+  color: 'rgb(255, 255, 255)',
+  r: 1
+};
+function DEG(deg) {
+  return Math.PI * (deg / 180);
+}
+function SINDEG(deg) {
+  if (deg > DEG(165)) {
+    deg -= Math.PI / 4;
+  } else if (deg < DEG(15)) {
+    deg += Math.PI / 4;
+  }
+  return deg;
+}
+function COSDEG(deg) {
+  if (deg > DEG(15) && deg <= DEG(90)) {
+    deg -= Math.PI / 6;
+  } else if (deg > DEG(90) && deg <= DEG(165)) {
+    deg += Math.PI / 6;
+  }
+  return deg;
+}
+
+var classCallCheck = function (instance, Constructor) {
+  if (!(instance instanceof Constructor)) {
+    throw new TypeError("Cannot call a class as a function");
+  }
+};
+
+var createClass = function () {
+  function defineProperties(target, props) {
+    for (var i = 0; i < props.length; i++) {
+      var descriptor = props[i];
+      descriptor.enumerable = descriptor.enumerable || false;
+      descriptor.configurable = true;
+      if ("value" in descriptor) descriptor.writable = true;
+      Object.defineProperty(target, descriptor.key, descriptor);
+    }
+  }
+
+  return function (Constructor, protoProps, staticProps) {
+    if (protoProps) defineProperties(Constructor.prototype, protoProps);
+    if (staticProps) defineProperties(Constructor, staticProps);
+    return Constructor;
+  };
+}();
+
+var SnowParticle = function () {
+  /**
+  * Creates an instance of SnowParticle.
+  * @param {Object} option content, x, y, color
+  * @memberof Snow
+  */
+  function SnowParticle() {
+    var option = arguments.length > 0 && arguments[0] !== undefined ? arguments[0] : {};
+    classCallCheck(this, SnowParticle);
+
+    this.option = Object.assign({}, DEFAULT_SNOWPARTICLE_OPTIONS, option);
+    var _option = this.option,
+        content = _option.content,
+        color = _option.color,
+        x = _option.x,
+        y = _option.y,
+        r = _option.r,
+        v = _option.v;
+
+    this.color = color.replace('rgb', 'rgba').split(')')[0] + ',' + (Math.floor(Math.random() * 50) + 50) / 100 + ')';
+    this.content = content;
+    this.r = r * (Math.random() * 0.4 + 0.6);
+    this.x = x;
+    this.y = y;
+    this.v = v;
+    this.angle = Math.PI * Math.random();
+    // this.init();
+  }
+  // init() {
+  // }
+
+
+  createClass(SnowParticle, [{
+    key: 'draw',
+    value: function draw() {
+      var content = this.content,
+          color = this.color,
+          x = this.x,
+          y = this.y,
+          r = this.r;
+
+      content.beginPath();
+      content.arc(Math.floor(x), Math.floor(y), r, 0, 2 * Math.PI, true);
+      content.closePath();
+      content.fillStyle = color;
+      content.fill();
+    }
+  }, {
+    key: 'move',
+    value: function move() {
+      var _option2 = this.option,
+          width = _option2.width,
+          height = _option2.height;
+
+      this.x += this.v * Math.cos(COSDEG(this.angle)) * 0.3;
+      this.y += this.v * Math.sin(SINDEG(this.angle));
+      if (this.y > height || this.x > width || this.x < 0) {
+        this.y = 0;
+        this.x = Math.random() * width;
+        this.angle = Math.PI * Math.random();
+      }
+    }
+  }]);
+  return SnowParticle;
+}();
+
+var Snow = function () {
+  /**
+  * Creates an instance of Snow.
+  * @param {Element} element target
+  * @param {Object} [option={}] options
+  * @memberof Snow
+  */
+  function Snow(element) {
+    var option = arguments.length > 1 && arguments[1] !== undefined ? arguments[1] : {};
+    classCallCheck(this, Snow);
+
+    this.element = document.querySelector(element);
+    this.canvas = '';
+    this.ctx = '';
+    this.width = 0;
+    this.height = 0;
+    this.option = Object.assign({}, DEFAULT_OPTIONS, option);
+    this.number = this.option.number;
+    this.partiles = [];
+    this.init();
+  }
+
+  createClass(Snow, [{
+    key: 'init',
+    value: function init() {
+      var element = this.element;
+
+      var width = element.clientWidth;
+      var height = element.clientHeight;
+      this.width = width;
+      this.height = height;
+      this.createCanvas();
+      this.createParticle();
+    }
+  }, {
+    key: 'createCanvas',
+    value: function createCanvas() {
+      var element = this.element,
+          width = this.width,
+          height = this.height;
+
+      var canvas = document.createElement('canvas');
+      canvas.width = width;
+      canvas.height = height;
+      canvas.style.cssText = 'position:absolute;top:0;left:0;background:rgba(0,0,0,0);pointer-events:none;z-index:1;';
+      element.appendChild(canvas);
+      this.canvas = canvas;
+      this.ctx = canvas.getContext('2d');
+    }
+  }, {
+    key: 'createParticle',
+    value: function createParticle() {
+      var _option3 = this.option,
+          r = _option3.r,
+          v = _option3.v;
+      var ctx = this.ctx,
+          width = this.width,
+          height = this.height,
+          number = this.number,
+          partiles = this.partiles;
+
+      for (var i = 0; i < number; i += 1) {
+        var particle = new SnowParticle({
+          color: 'rgb(255,255,255)',
+          content: ctx,
+          y: Math.floor(Math.random() * height),
+          x: Math.floor(Math.random() * width),
+          r: r,
+          v: v,
+          width: this.width,
+          height: this.height
+          // angle: Math.PI,
+        });
+        partiles.push(particle);
+        particle.draw();
+      }
+      function animate() {
+        ctx.clearRect(0, 0, width, height);
+        partiles.forEach(function (item) {
+          item.move();
+          item.draw();
+        });
+        requestAnimationFrame(animate);
+      }
+      animate();
+    }
+  }]);
+  return Snow;
+}();
+
+return Snow;
+
+})));
