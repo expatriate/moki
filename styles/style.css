@@ -539,12 +539,12 @@ html, body {
 .trailer-btn span {
   position: relative;
 }
-.youtube::after{
+.youtube:after{
   background-image: url('../assets/img/youtube_hover.png');
 }
 
 
-.social__item a::after, .trailer-btn span::after{
+.social__item a:after, .trailer-btn span:after{
   content: '';
   top:0;
   left: 0;
@@ -566,7 +566,7 @@ html, body {
 }
 @media screen and (min-width: 720px) {
 
-  .social__item a:hover::after, .trailer-btn span:hover::after{
+  .social__item a:hover:after, .trailer-btn span:hover:after{
     opacity: 1;
     -webkit-transition: all .25s ease;
     -moz-transition: all .25s ease
@@ -580,18 +580,18 @@ html, body {
   background-repeat: no-repeat;
   background-position: center top;
 }
-.ok::after{
+.ok:after{
   background-image: url('../assets/img/ok_hover.png');
 }
-.fb::after{
+.fb:after{
   background-image: url('../assets/img/fb_hover.png');
 }
-.vk::after{
+.vk:after{
   background-image: url('../assets/img/vk_hover.png');
 }
-.tw::after{
+.tw:after{
   background-image: url('../assets/img/tw_hover.png');
 }
-.inst::after{
+.inst:after{
   background-image: url('../assets/img/inst_hover.png');
 }
