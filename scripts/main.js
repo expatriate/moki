@@ -30,3 +30,4 @@ function mouseMove(e) {
   document.getElementById('background').style.backgroundPosition = newvalueX1 + "px " + newvalueY1 + "px";
   document.getElementById('snow').style.backgroundPosition = newvalueX2 + "px " + newvalueY2 + "px";
 }
+

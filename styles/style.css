@@ -126,8 +126,8 @@ html, body {
     background:url('../assets/img/shamsmall.png');
     z-index: 1;
     background-size: cover;
-    width: 43%;
-    height: 54%;
+    width: 41%;
+    height: 52%;
     left: 0;
     bottom: 30%;
   }
@@ -172,7 +172,7 @@ html, body {
 }
 .left-5 {
   width: 39%;
-  height: 35%;
+  height: 36%;
   position: absolute;
   left: 0;
   bottom: 34%;
@@ -230,11 +230,11 @@ html, body {
   background-position: bottom right;
 }
 .right-4 {
-  width: 39%;
-  height: 17%;
+  width: 42%;
+  height: 22%;
   position: absolute;
   right: -12px;
-  bottom: 38%;
+  bottom: 36%;
   transform: rotate(8deg);
   z-index: 3;
   background:url('../assets/img/dog.png');
@@ -243,8 +243,8 @@ html, body {
   background-position: bottom right;
 }
 .right-5 {
-  width: 54%;
-  height: 39%;
+  width: 57%;
+  height: 42%;
   position: absolute;
   right:0;
   bottom: 41%;
@@ -271,7 +271,7 @@ html, body {
   height: 70%;
   position: absolute;
   right:20%;
-  bottom: 17%;
+  bottom: 19%;
   background:url('../assets/img/main.png');
   background-size: contain;
   background-repeat: no-repeat;
@@ -281,11 +281,11 @@ html, body {
 
 @media screen and (max-width: 720px) {
   .center-2 {
-    width: 96%;
-    height: 26%;
+    width: 88%;
+    height: 21%;
     position: absolute;
-    right: 3%;
-    bottom: 30%;
+    right: 6%;
+    bottom: 31%;
     z-index: 5;
     background:url('../assets/img/logosmall.png');
     background-size: contain;
@@ -361,6 +361,17 @@ html, body {
   height: 54px;
   margin: 4px;
 }
+@media screen and (max-width: 720px) {
+  .social {
+    margin-bottom: 0px;
+    height: 46px;
+  }
+  .social__item {
+    width: 44px;
+    height: 46px;
+    margin: 4px;
+  }
+}
 .social__item img {
   width: 100%;
   height: 100%;
@@ -376,11 +387,13 @@ html, body {
   margin: 12px 0px;
   font-size:20px;
   text-transform: uppercase;
+  text-align: center;
 }
 @media screen and (max-width: 720px) {
   .big-text {
     margin: 12px 0px 0px 0px;
     font-size:16px;
+    line-height: 1.5;
     text-align: center;
     text-transform: uppercase;
   }
@@ -390,17 +403,24 @@ html, body {
   font-size:36px;
   text-transform: uppercase;
 }
+@media screen and (max-width: 720px) {
+  .extra-big-text {
+    margin-top: 4px;
+  }
+}
 .middle-text {
   margin: 8px 0px;
   font-size: 14px;
   text-transform: uppercase;
+  text-align: center;
 }
 
 @media screen and (max-width: 720px) {
   .middle-text {
+    margin: 10px 0px 4px 0px;
     width: 57%;
     color: #132445!important;
-    font-size: 16px;
+    font-size: 14px;
     text-align: center;
   }
 }
@@ -413,7 +433,7 @@ html, body {
 @media screen and (max-width: 720px) {
   .small-text {
     margin: 14px 0px;
-    font-size:10px;
+    font-size:8px;
     text-align: center;
     text-transform: uppercase;
   }
@@ -508,4 +528,70 @@ html, body {
   height: 105%;
   width: 105%;
   background-size: cover;
+}
+
+.social__item {
+  position: relative;
+}
+.social__item a , .trailer-btn span{
+  display: block;
+}
+.trailer-btn span {
+  position: relative;
+}
+.youtube::after{
+  background-image: url('../assets/img/youtube_hover.png');
+}
+
+
+.social__item a::after, .trailer-btn span::after{
+  content: '';
+  top:0;
+  left: 0;
+  position: absolute;
+  display: block;
+  width: 100%;
+  height: 100%;
+  background-size: 100% 104%;
+  z-index: 9;
+  opacity: 0;
+  -webkit-transition: all .1s ease-out 0.1s;
+  -moz-transition: all .1s ease-out 0.1s;
+  -o-transition: all .1s ease-out 0.1s;
+  transition: all .1s ease-out 0.1s;
+}
+
+.trailer-btn-button {
+  width: 180px;
+}
+@media screen and (min-width: 720px) {
+
+  .social__item a:hover::after, .trailer-btn span:hover::after{
+    opacity: 1;
+    -webkit-transition: all .25s ease;
+    -moz-transition: all .25s ease
+    -o-transition: all .25s ease;
+    transition: all .25s ease;
+  }
+}
+.trailer-btn span::after {
+  background-image: url('../assets/img/trailerbutton_hover.png');
+  background-size: 180px;
+  background-repeat: no-repeat;
+  background-position: center top;
+}
+.ok::after{
+  background-image: url('../assets/img/ok_hover.png');
+}
+.fb::after{
+  background-image: url('../assets/img/fb_hover.png');
+}
+.vk::after{
+  background-image: url('../assets/img/vk_hover.png');
+}
+.tw::after{
+  background-image: url('../assets/img/tw_hover.png');
+}
+.inst::after{
+  background-image: url('../assets/img/inst_hover.png');
 }
